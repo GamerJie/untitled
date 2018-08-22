@@ -30,11 +30,13 @@ include_directories(extlibs/Lua/src)
 include_directories(include/MetaStuff)
 include_directories(extlibs/SFML/include)
 
+
 file(GLOB src src/*)
+file(GLOB thor src/thor/*)
 file(GLOB imgui src/imgui/*)
 file(GLOB editor src/editor/*)
 
-add_executable(untitled ${src} ${imgui} ${editor})
+add_executable(untitled ${src} ${imgui} ${editor} ${thor})
 
 target_link_libraries(untitled lualib
         sfml-audio
